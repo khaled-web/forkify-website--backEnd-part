@@ -7,13 +7,12 @@ export default class Search {
 
   async getResult() {
     try {
-      const rec =await  axios(`https://forkify-api.herokuapp.com/api/search?q=${this.query}`)
+      const rec = await  axios(`https://forkify-api.herokuapp.com/api/search?q=${this.query}`)
       this.result = rec.data.recipes;
-      console.log(this.result);
+      //console.log(this.result);
     } catch (error) {
       alert(error);
     }
-
   }
 
 }
