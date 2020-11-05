@@ -1,4 +1,5 @@
 import Search from './Model/Search';
+import Recipe from './Model/Recipe'
 import * as searchView from './View/searchView';
 import {
   elements,
@@ -54,4 +55,10 @@ elements.searchResPages.addEventListener('click', (e) => {
     searchView.renderResult(state.Search.result, goToPage)
 
   }
-})
+});
+
+// recipe controller
+
+const r = new Recipe(47746);
+r.getRecipe();
+console.log(r)
