@@ -1,4 +1,7 @@
 import axios from 'axios';
+import {
+    elements
+} from '../View/base';
 
 export default class Recipe {
     constructor(id) {
@@ -36,6 +39,7 @@ export default class Recipe {
 
         const unitLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
         const unitShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+        const units = [...unitShort, 'kg', 'g'];
 
         const newIngredient = this.ingredients.map(el => {
 
@@ -51,7 +55,7 @@ export default class Recipe {
             // 03. parse ingredients into count, unit, ingredients(text)
 
             const arrIng = ingredient.split(' ');
-            const unitIndex = arrIng.findIndex(cur => unitShort.includes(cur));
+            const unitIndex = arrIng.findIndex(cur => units.includes(cur));
 
             let objIng;
 
