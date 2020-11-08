@@ -13,6 +13,10 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
+export const hightLightSelected = (id) => {
+    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+};
+
 /* 
 // 'pasta with tomato and spinach'
 
