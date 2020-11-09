@@ -49,7 +49,7 @@ elements.searchForm.addEventListener('submit', (e) => {
 });
 
 elements.searchResPages.addEventListener('click', (e) => {
-  const btn = e.target.closest('.btn-inline')
+  const btn = e.target.closest('.btn-inline');
   if (btn) {
     const goToPage = parseInt(btn.dataset.goto, 10);
     searchView.clearResults();
@@ -93,3 +93,20 @@ const controlRecipe = async () => {
 //window.addEventListener('hashchange', controlRecipe);
 //window.addEventListener('load', controlRecipe)
 ['hashchange', 'load'].forEach(cur => window.addEventListener(cur, controlRecipe));
+
+// Handling recipe button clicks.
+
+elements.recipe.addEventListener('click', e => {
+  if (e.target.matches('.btn-decrease, .btn-decrease *')) {
+    // Decrease button is clicked
+    if (state.recipe.servings > 1) {
+      state.recipe.updateServings('dec');
+      recipeView.updateServingsIngredients(state.recipe);
+    }
+  } else if (e.target.matches('.btn-increase, .btn-increase *')) {
+    // increase button is clicked
+    state.recipe.updateServings('inc');
+    recipeView.updateServingsIngredients(state.recipe);
+  }
+  console.log(state.recipe);
+});
