@@ -5,6 +5,7 @@ export const elements = {
    searchResultList: document.querySelector('.results__list'),
    searchResPages: document.querySelector('.results__pages'),
    recipe: document.querySelector('.recipe'),
+   shopping: document.querySelector('.shopping__list')
 
 };
 
@@ -18,13 +19,13 @@ export const renderLoading = (parent) => {
 
    const loader = `
    
-     <div class = "${elementStrings.loader}">
-       <svg> 
-          <use href="img/icons.svg#icon-cw"></use>
-       </svg>
-     </div>
+   <div class = "${elementStrings.loader}">
+      <svg> 
+      <use href="img/icons.svg#icon-cw"></use>
+      </svg>
+   </div>
 
-    `;
+   `;
    parent.insertAdjacentHTML('afterbegin', loader);
 
 };
