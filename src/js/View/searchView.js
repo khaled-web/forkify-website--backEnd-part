@@ -14,7 +14,7 @@ export const clearResults = () => {
 };
 
 export const hightLightSelected = (id) => {
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+    document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
 };
 
 /* 
@@ -27,7 +27,7 @@ acc: 15 / acc + cur.length: 18 / newTitle: ['pasta', 'with', 'tomato']....over t
 
 */
 
-const limitRecipeTitle = (title, limit = 15) => {
+export const limitRecipeTitle = (title, limit = 15) => {
 
     const newTitle = [];
 
